@@ -1,3 +1,5 @@
+import kivy
+kivy.require('2.0.0.dev0')
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.core.window import Window
@@ -30,7 +32,7 @@ class Screen(FloatLayout):
         print("Opening SETTINGS")
         from subprocess import Popen, PIPE
         process = Popen(['python3', 'template2.py'], stdout=PIPE, stderr=PIPE)
-        
+
 
 
 class HMIApp(App):
