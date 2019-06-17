@@ -1,5 +1,5 @@
 import kivy
-kivy.require('2.0.0.dev0')
+kivy.require('2.0.0')
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.core.window import Window
