@@ -1,0 +1,219 @@
+<Button>:
+    background_color: 0.3,0.4,0.2,1
+    size_hint: 0.2, 0.1
+
+
+<FloatLayout>:
+    background_color: 0,1,1,1
+    timestamp: timestamp
+    Label:
+        id: timestamp
+        size_hint: 0.2, 0.1
+        # text: "time \ndate"
+        pos_hint: {"x": 0,"y": 0.9}
+        text_size: self.width, None
+        halign: 'center'
+        canvas.before:
+            Color:
+                rgba: 1, .3, .8, .5
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    Label:
+        font_size: '20dp'
+        size_hint: 0.32, 0.1
+        text: "Online Monitoring System"
+        pos_hint: {"x": 0.34,"y": 0.9}
+        text_size: self.width, None
+        halign: 'center'
+        canvas.before:
+            Color:
+                rgba: 1, .3, .8, .5
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    Label:
+        size_hint: 0.2, 0.1
+        text: "PT Terado"
+        pos_hint: {"x":0.8 ,"y": 0.9}
+        text_size: self.width, None
+        halign: 'center'
+        canvas.before:
+            Color:
+                rgba: 1, .3, .8, .5
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    Label:
+        size_hint: 0.15, 0.1
+        font_size: '20dp'
+        text: "COD"
+        color: 0, 0, 0, 1
+        pos_hint: {"x":0.1 ,"y": 0.7}
+        text_size: self.width, None
+        halign: 'center'
+        canvas.before:
+            Color:
+                rgba: 0.75, 0.75, 0.75, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    Label:
+        size_hint: 0.17, 0.1
+        font_size: '30dp'
+        text: "0.00 [size=15]mg/l[/size]"
+        color: 1, 1, 1, 1
+        pos_hint: {"x":0.26 ,"y": 0.7}
+        text_size: self.width, None
+        halign: 'center'
+        markup: True
+        canvas.before:
+            Color:
+                rgba: 0, 0, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    Label:
+        size_hint: 0.15, 0.1
+        font_size: '20dp'
+        text: "BOD"
+        color: 0, 0, 0, 1
+        pos_hint: {"x":0.58 ,"y": 0.7}
+        text_size: self.width, None
+        halign: 'center'
+        canvas.before:
+            Color:
+                rgba: 0.75, 0.75, 0.75, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    Label:
+        size_hint: 0.17, 0.1
+        font_size: '30dp'
+        text: "0.00 [size=15]mg/l[/size]"
+        color: 1, 1, 1, 1
+        pos_hint: {"x":0.74 ,"y": 0.7}
+        text_size: self.width, None
+        halign: 'center'
+        markup: True
+        canvas.before:
+            Color:
+                rgba: 0, 0, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    Label:
+        size_hint: 0.15, 0.1
+        font_size: '20dp'
+        text: "TSS"
+        color: 0, 0, 0, 1
+        pos_hint: {"x":0.1 ,"y": 0.55}
+        text_size: self.width, None
+        halign: 'center'
+        canvas.before:
+            Color:
+                rgba: 0.75, 0.75, 0.75, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    Label:
+        size_hint: 0.17, 0.1
+        font_size: '30dp'
+        text: "0.00 [size=15]mg/l[/size]"
+        color: 1, 1, 1, 1
+        pos_hint: {"x":0.26 ,"y": 0.55}
+        text_size: self.width, None
+        halign: 'center'
+        markup: True
+        canvas.before:
+            Color:
+                rgba: 0, 0, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+
+    Label:
+        size_hint: 0.15, 0.1
+        font_size: '20dp'
+        text: "PH"
+        color: 0, 0, 0, 1
+        pos_hint: {"x":0.58 ,"y": 0.55}
+        text_size: self.width, None
+        halign: 'center'
+        canvas.before:
+            Color:
+                rgba: 0.75, 0.75, 0.75, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    Label:
+        size_hint: 0.17, 0.1
+        font_size: '30dp'
+        text: "0.00"
+        color: 1, 1, 1, 1
+        pos_hint: {"x":0.74 ,"y": 0.55}
+        text_size: self.width, None
+        halign: 'center'
+        markup: True
+        canvas.before:
+            Color:
+                rgba: 0, 0, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    Label:
+        size_hint: 0.15, 0.1
+        font_size: '20dp'
+        text: "FLOW"
+        color: 0, 0, 0, 1
+        pos_hint: {"x":0.3 ,"y": 0.4}
+        text_size: self.width, None
+        halign: 'center'
+        canvas.before:
+            Color:
+                rgba: 0.75, 0.75, 0.75, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    Label:
+        size_hint: 0.17, 0.1
+        font_size: '30dp'
+        text: "0.00 [size=15]m3/h[/size]"
+        color: 1, 1, 1, 1
+        pos_hint: {"x":0.46 ,"y": 0.4}
+        text_size: self.width, None
+        halign: 'center'
+        markup: True
+        canvas.before:
+            Color:
+                rgba: 0, 0, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+
+
+    Button:
+        text: "HOME"
+        # pos_hint: {"x": 0.5}
+    Button:
+        id: setng
+        text: "SETTINGS"
+        pos_hint: {"x": 0.4}
+        on_release:  root.btn_touch_up()
+    Button:
+        text: "SEND TO USB"
+        pos_hint: {"x": 0.8}
+        on_press: root.send_to_usb()

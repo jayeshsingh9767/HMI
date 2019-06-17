@@ -1,0 +1,138 @@
+<FloatLayout>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'back.jpg'
+
+    Label:
+        size_hint: 0.16, 0.12
+        font_size: '40dp'
+        text: "COD"
+        color: 0.53, 0.72, 0.82, 1
+        bold: True
+        pos_hint: {"x":0.5 ,"y": 0.7}
+
+
+    Label:
+        size_hint: 0.12, 0.07
+        font_size: '32dp'
+        bold: True
+        text: "0.00"
+        color: 1, 1, 1, 1
+        pos_hint: {"x":0.52 ,"y": 0.645}
+        text_size: self.width, None
+        halign: 'center'
+        # valign: 'middle'
+        markup: True
+        canvas.before:
+            Color:
+                rgba: 0.26, 0.50, 0.55, 0.8
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    Label:
+        size_hint: 0.16, 0.12
+        font_size: '40dp'
+        text: "BOD"
+        color: 0.53, 0.72, 0.82, 1
+        bold: True
+        pos_hint: {"x":0.1 ,"y": 0.55}
+
+
+    Label:
+        size_hint: 0.12, 0.07
+        font_size: '32dp'
+        bold: True
+        text: "0.00"
+        color: 1, 1, 1, 1
+        pos_hint: {"x":0.12 ,"y": 0.495}
+        text_size: self.width, None
+        halign: 'center'
+        markup: True
+        canvas.before:
+            Color:
+                rgba: 0.26, 0.50, 0.55, 0.8
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    Label:
+        size_hint: 0.16, 0.12
+        font_size: '40dp'
+        text: "TSS"
+        color: 0.53, 0.72, 0.82, 1
+        bold: True
+        pos_hint: {"x":0.25 ,"y": 0.4}
+
+
+    Label:
+        size_hint: 0.14, 0.07
+        font_size: '32dp'
+        bold: True
+        text: "0.00 [size=15]mg/l[/size]"
+        color: 1, 1, 1, 1
+        pos_hint: {"x":0.27 ,"y": 0.345}
+        text_size: self.width, None
+        halign: 'center'
+        markup: True
+        canvas.before:
+            Color:
+                rgba: 0.26, 0.50, 0.55, 0.8
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+
+    Label:
+        size_hint: 0.16, 0.12
+        font_size: '40dp'
+        text: "PH"
+        color: 0.53, 0.72, 0.82, 1
+        bold: True
+        pos_hint: {"x":0.52 ,"y": 0.29}
+
+
+    Label:
+        size_hint: 0.14, 0.07
+        font_size: '32dp'
+        bold: True
+        text: "0.00 [size=15]mg/l[/size]"
+        color: 1, 1, 1, 1
+        pos_hint: {"x":0.54 ,"y": 0.235}
+        text_size: self.width, None
+        halign: 'center'
+        markup: True
+        canvas.before:
+            Color:
+                rgba: 0.26, 0.50, 0.55, 0.8
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    Label:
+        size_hint: 0.16, 0.12
+        font_size: '40dp'
+        text: "FLOW"
+        color: 0.53, 0.72, 0.82, 1
+        bold: True
+        pos_hint: {"x":0.71 ,"y": 0.41}
+
+
+    Label:
+        size_hint: 0.14, 0.07
+        font_size: '32dp'
+        bold: True
+        text: "0.00 [size=15]mg/l[/size]"
+        color: 1, 1, 1, 1
+        pos_hint: {"x":0.72 ,"y": 0.355}
+        text_size: self.width, None
+        halign: 'center'
+        markup: True
+        canvas.before:
+            Color:
+                rgba: 0.26, 0.50, 0.55, 0.8
+            Rectangle:
+                pos: self.pos
+                size: self.size
