@@ -1,3 +1,5 @@
+import os
+os.environ['KIVY_GL_BACKEND'] = 'gl'
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.properties import ObjectProperty
