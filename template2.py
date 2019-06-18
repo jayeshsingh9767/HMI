@@ -23,6 +23,7 @@ class Screen(FloatLayout):
         flow = "N/A"
         db_value = db.get_parameter_values()
         for x in db_value:
+            print("X is : ", x)
             # for key,value in x.items():
             if x["parameter_id"] == "parameter_83":
                 cod = str(x["value"])
