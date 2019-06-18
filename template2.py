@@ -12,7 +12,7 @@ for x in db_value:
     # for key,value in x.items():
     print(x)
     if x["parameter_id"] == "parameter_83":
-        temp = str(x["values"])
+        temp = str(x["value"])
         print("TEmp is ", temp)
 class Screen(FloatLayout):
     '''It is base layout that holds all our widgets'''
