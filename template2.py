@@ -26,7 +26,7 @@ class Screen(FloatLayout):
 class Template2App(App):
     def build(self):
         obj = Screen()
-        Clock.schedule_interval(obj.temp_render(), 1)
+        Clock.schedule_interval(obj.temp_render, 1)
         return obj
 
 
