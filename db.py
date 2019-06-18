@@ -15,8 +15,9 @@ def get_parameter_values():
 
     myresult = cursor.fetchall()
     arr = []
-    res = {}
+
     for x in myresult:
+        res = {}
         res["parameter_id"] = x[3]
         res["value"] = x[14]
         arr.append(res)
