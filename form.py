@@ -1,5 +1,3 @@
-import kivy
-kivy.require('2.0.0')
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.core.window import Window
@@ -10,7 +8,7 @@ import time
 from kivy.clock import Clock
 
 # Window.clearcolor = (0, 1, 1, 1)
-Window.size = (900, 600)
+
 
 
 
