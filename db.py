@@ -3,7 +3,7 @@ import mysql.connector
 
 def get_parameter_values():
     db_obj = mysql.connector.connect(
-        host = "http://192.168.0.102",
+        host = "localhost",
         user = "root",
         password = "password",
         database="pt_tech"
@@ -18,4 +18,4 @@ def get_parameter_values():
     for x in myresult:
       res["parameter_id"] = x[3]
       res["value"] = x[14]
-     return res
+    return res
