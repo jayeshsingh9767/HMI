@@ -8,7 +8,7 @@ from kivy.uix.label import Label
 from kivy.properties import ObjectProperty
 import time
 from kivy.clock import Clock
-
+# import db
 # Window.clearcolor = (0, 1, 1, 1)
 
 
@@ -38,6 +38,7 @@ class Screen(FloatLayout):
 class HMIApp(App):
     def build(self):
         ''' Returns our base Widget '''
+        # print(db.get_parameter_values())
         obj = Screen()
         Clock.schedule_interval(obj.show_datetime, 1)
         return obj
