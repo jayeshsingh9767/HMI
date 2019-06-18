@@ -6,6 +6,7 @@ from kivy.properties import ObjectProperty
 import time
 from kivy.clock import Clock
 import db
+from asci import serial_connection
 
 
 class Screen(FloatLayout):
@@ -15,6 +16,21 @@ class Screen(FloatLayout):
     tss_val = ObjectProperty(None)
     ph_val = ObjectProperty(None)
     flow_val = ObjectProperty(None)
+    timestamp = ObjectProperty(None)
+    def calibrate(self):
+        print("Initializing Calibration")
+        serial_connection()
+        ser.write('#W03%OPRUSS%')
+        response  = ser.readline()
+        print(ser)
+        print(response)
+    
+    def show_datetime(self, *arg):
+        self.timestamp.text = time.asctime()
+
+    def sync(self):
+        print("Syncing")
+
     def temp_render(self, *arg):
         cod = "N/A"
         bod = "N/A"
@@ -54,6 +70,7 @@ class Template2App(App):
     def build(self):
         obj = Screen()
         Clock.schedule_interval(obj.temp_render, 1)
+        Clock.schedule_interval(obj.show_datetime, 1)
         return obj
 
 

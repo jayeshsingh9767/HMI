@@ -5,7 +5,7 @@ def get_parameter_values():
     db_obj = mysql.connector.connect(
         host = "localhost",
         user = "root",
-        password = "password",
+        password = "",
         database="pt_tech"
     )
 
