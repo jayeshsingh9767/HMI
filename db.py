@@ -11,7 +11,7 @@ def get_parameter_values():
 
     cursor = db_obj.cursor()
 
-    mycursor.execute("SELECT * FROM site_parameters")
+    cursor.execute("SELECT * FROM site_parameters")
 
     myresult = cursor.fetchall()
     res = {}
