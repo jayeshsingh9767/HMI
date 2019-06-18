@@ -7,17 +7,18 @@ import time
 from kivy.clock import Clock
 import db
 
-db_value = db.get_parameter_values()
-for x in db_value:
-    # for key,value in x.items():
-    print(x)
-    if x["parameter_id"] == "parameter_83":
-        temp = str(x["value"])
-        print("TEmp is ", temp)
+
 class Screen(FloatLayout):
     '''It is base layout that holds all our widgets'''
     cod_val = ObjectProperty(None)
     def temp_render(self, *arg):
+        db_value = db.get_parameter_values()
+        for x in db_value:
+            # for key,value in x.items():
+            print(x)
+            if x["parameter_id"] == "parameter_83":
+                temp = str(x["value"])
+                print("TEmp is ", temp)
         self.cod_val.text = temp
     def show_datetime(self, *arg):
         self.timestamp.text = time.asctime()
