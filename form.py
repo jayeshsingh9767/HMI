@@ -8,7 +8,7 @@ from kivy.uix.label import Label
 from kivy.properties import ObjectProperty
 import time
 from kivy.clock import Clock
-# import db
+import db
 # Window.clearcolor = (0, 1, 1, 1)
 
 
