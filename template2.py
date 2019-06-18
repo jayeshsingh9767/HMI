@@ -16,6 +16,11 @@ class Screen(FloatLayout):
     ph_val = ObjectProperty(None)
     flow_val = ObjectProperty(None)
     def temp_render(self, *arg):
+        cod = "N/A"
+        bod = "N/A"
+        tss = "N/A"
+        ph = "N/A"
+        flow = "N/A"
         db_value = db.get_parameter_values()
         for x in db_value:
             # for key,value in x.items():
