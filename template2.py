@@ -17,7 +17,7 @@ for x in db_value:
 class Screen(FloatLayout):
     '''It is base layout that holds all our widgets'''
     cod_val = ObjectProperty(None)
-    def temp_render(self):
+    def temp_render(self, *arg):
         self.cod_val.text = temp
     def show_datetime(self, *arg):
         self.timestamp.text = time.asctime()
@@ -26,7 +26,7 @@ class Screen(FloatLayout):
 class Template2App(App):
     def build(self):
         obj = Screen()
-        Clock.schedule_interval(obj.temp_render, 1)
+        Clock.schedule_interval(obj.temp_render(), 1)
         return obj
 
 
