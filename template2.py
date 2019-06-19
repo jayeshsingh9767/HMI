@@ -6,10 +6,20 @@ from kivy.properties import ObjectProperty
 import time
 from kivy.clock import Clock
 import db
+from kivy.uix.videoplayer import VideoPlayer
 from asci import serial_connection
+from kivy.uix.screenmanager import ScreenManager, Screen
 
 
-class Screen(FloatLayout):
+class VideoScreen(Screen):
+    def video_player(self):
+        self.player= VideoPlayer(source='opruss.mp4',  state='play', options={'allow_stretch': True})
+        return self.player
+
+    def run_home(self, *args):
+        self.manager.current = 'home'
+
+class MyScreen(Screen):
     '''It is base layout that holds all our widgets'''
     cod_val = ObjectProperty(None)
     bod_val = ObjectProperty(None)
@@ -24,7 +34,7 @@ class Screen(FloatLayout):
         response  = ser.readline()
         print(ser)
         print(response)
-    
+
     def show_datetime(self, *arg):
         self.timestamp.text = time.asctime()
 
@@ -66,12 +76,25 @@ class Screen(FloatLayout):
         self.timestamp.text = time.asctime()
 
 
+
+
 class Template2App(App):
+
     def build(self):
-        obj = Screen()
+        sm = ScreenManager()
+        obj = MyScreen(name="home")
+        vdo = VideoScreen(name="orpuss")
+        sm.add_widget(vdo)
+        sm.add_widget(obj)
+        # video = obj.video_player()
         Clock.schedule_interval(obj.temp_render, 1)
         Clock.schedule_interval(obj.show_datetime, 1)
-        return obj
+        Clock.schedule_interval(vdo.run_home, 12)
+        return sm
+    def on_start(self):
+        sm = ScreenManager()
+        sm.add_widget(MyScreen(name="home"))
+
 
 
 if __name__ == "__main__":

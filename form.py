@@ -9,9 +9,8 @@ from kivy.properties import ObjectProperty
 import time
 from kivy.clock import Clock
 import db
+
 # Window.clearcolor = (0, 1, 1, 1)
-
-
 
 
 class Screen(FloatLayout):

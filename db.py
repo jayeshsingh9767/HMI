@@ -2,10 +2,12 @@ import mysql.connector
 
 
 def get_parameter_values():
+    # temp = [{"parameter_id": "paramter_80", "value": 25.30}]
+    # return temp
     db_obj = mysql.connector.connect(
         host = "localhost",
         user = "root",
-        password = "",
+        password = "password",
         database="pt_tech"
     )
 
@@ -14,6 +16,7 @@ def get_parameter_values():
     cursor.execute("SELECT * FROM site_parameters")
 
     myresult = cursor.fetchall()
+
     arr = []
 
     for x in myresult:

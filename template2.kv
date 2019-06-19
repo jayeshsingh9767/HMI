@@ -1,9 +1,12 @@
-<FloatLayout>:
-    canvas.before:
-        Rectangle:
-            pos: self.pos
-            size: self.size
-            source: 'back.jpg'
+<VideoScreen>:
+    VideoPlayer:
+        # id: testid
+        state: 'play'
+        source: 'opruss.mp4'
+        # fullscreen: True
+
+
+<MyScreen>:
     cod_val: cod_val
     bod_val: bod_val
     tss_val: tss_val
@@ -11,182 +14,189 @@
     flow_val: flow_val
     timestamp: timestamp
 
-    Label:
-        size_hint: 0.16, 0.12
-        font_size: '40dp'
-        text: "COD"
-        color: 0.53, 0.72, 0.82, 1
-        bold: True
-        pos_hint: {"x":0.5 ,"y": 0.7}
-
-
-    Label:
-        id: cod_val
-        size_hint: 0.12, 0.07
-        font_size: '28dp'
-        bold: True
-        text: "0.00"
-        color: 1, 1, 1, 1
-        pos_hint: {"x":0.52 ,"y": 0.645}
-        text_size: self.width, None
-        halign: 'center'
-        # valign: 'middle'
-        markup: True
+    # name: "home"
+    FloatLayout
         canvas.before:
-            Color:
-                rgba: 0.26, 0.50, 0.55, 0.8
             Rectangle:
                 pos: self.pos
                 size: self.size
+                source: 'back.jpg'
 
-    Label:
-        size_hint: 0.16, 0.12
-        font_size: '40dp'
-        text: "BOD"
-        color: 0.53, 0.72, 0.82, 1
-        bold: True
-        pos_hint: {"x":0.1 ,"y": 0.55}
-
-
-    Label:
-        id: bod_val
-        size_hint: 0.12, 0.07
-        font_size: '28dp'
-        bold: True
-        text: "0.00"
-        color: 1, 1, 1, 1
-        pos_hint: {"x":0.12 ,"y": 0.495}
-        text_size: self.width, None
-        halign: 'center'
-        markup: True
-        canvas.before:
-            Color:
-                rgba: 0.26, 0.50, 0.55, 0.8
-            Rectangle:
-                pos: self.pos
-                size: self.size
-
-    Label:
-        size_hint: 0.16, 0.12
-        font_size: '40dp'
-        text: "TSS"
-        color: 0.53, 0.72, 0.82, 1
-        bold: True
-        pos_hint: {"x":0.25 ,"y": 0.4}
+        Label:
+            size_hint: 0.16, 0.12
+            font_size: '40dp'
+            text: "COD"
+            color: 0.53, 0.72, 0.82, 1
+            bold: True
+            pos_hint: {"x":0.5 ,"y": 0.7}
 
 
-    Label:
-        id: tss_val
-        size_hint: 0.14, 0.07
-        font_size: '28dp'
-        bold: True
-        text: "0.00 [size=15]mg/l[/size]"
-        color: 1, 1, 1, 1
-        pos_hint: {"x":0.27 ,"y": 0.345}
-        text_size: self.width, None
-        halign: 'center'
-        markup: True
-        canvas.before:
-            Color:
-                rgba: 0.26, 0.50, 0.55, 0.8
-            Rectangle:
-                pos: self.pos
-                size: self.size
+        Label:
+            id: cod_val
+            size_hint: 0.12, 0.07
+            font_size: '28dp'
+            bold: True
+            text: "0.00"
+            color: 1, 1, 1, 1
+            pos_hint: {"x":0.52 ,"y": 0.645}
+            text_size: self.width, None
+            halign: 'center'
+            # valign: 'middle'
+            markup: True
+            canvas.before:
+                Color:
+                    rgba: 0.26, 0.50, 0.55, 0.8
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Label:
+            size_hint: 0.16, 0.12
+            font_size: '40dp'
+            text: "BOD"
+            color: 0.53, 0.72, 0.82, 1
+            bold: True
+            pos_hint: {"x":0.1 ,"y": 0.55}
 
 
-    Label:
-        size_hint: 0.16, 0.12
-        font_size: '40dp'
-        text: "PH"
-        color: 0.53, 0.72, 0.82, 1
-        bold: True
-        pos_hint: {"x":0.52 ,"y": 0.29}
+        Label:
+            id: bod_val
+            size_hint: 0.12, 0.07
+            font_size: '28dp'
+            bold: True
+            text: "0.00"
+            color: 1, 1, 1, 1
+            pos_hint: {"x":0.12 ,"y": 0.495}
+            text_size: self.width, None
+            halign: 'center'
+            markup: True
+            canvas.before:
+                Color:
+                    rgba: 0.26, 0.50, 0.55, 0.8
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Label:
+            size_hint: 0.16, 0.12
+            font_size: '40dp'
+            text: "TSS"
+            color: 0.53, 0.72, 0.82, 1
+            bold: True
+            pos_hint: {"x":0.25 ,"y": 0.4}
 
 
-    Label:
-        id: ph_val
-        size_hint: 0.14, 0.07
-        font_size: '28dp'
-        bold: True
-        text: "0.00 [size=15]mg/l[/size]"
-        color: 1, 1, 1, 1
-        pos_hint: {"x":0.54 ,"y": 0.235}
-        text_size: self.width, None
-        halign: 'center'
-        markup: True
-        canvas.before:
-            Color:
-                rgba: 0.26, 0.50, 0.55, 0.8
-            Rectangle:
-                pos: self.pos
-                size: self.size
-
-    Label:
-        size_hint: 0.16, 0.12
-        font_size: '40dp'
-        text: "FLOW"
-        color: 0.53, 0.72, 0.82, 1
-        bold: True
-        pos_hint: {"x":0.71 ,"y": 0.41}
+        Label:
+            id: tss_val
+            size_hint: 0.14, 0.07
+            font_size: '28dp'
+            bold: True
+            text: "0.00 [size=15]mg/l[/size]"
+            color: 1, 1, 1, 1
+            pos_hint: {"x":0.27 ,"y": 0.345}
+            text_size: self.width, None
+            halign: 'center'
+            markup: True
+            canvas.before:
+                Color:
+                    rgba: 0.26, 0.50, 0.55, 0.8
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
 
 
-    Label:
-        id: flow_val
-        size_hint: 0.14, 0.07
-        font_size: '28dp'
-        bold: True
-        text: "0.00 [size=15]mg/l[/size]"
-        color: 1, 1, 1, 1
-        pos_hint: {"x":0.72 ,"y": 0.355}
-        text_size: self.width, None
-        halign: 'center'
-        markup: True
-        canvas.before:
-            Color:
-                rgba: 0.26, 0.50, 0.55, 0.8
-            Rectangle:
-                pos: self.pos
-                size: self.size
+        Label:
+            size_hint: 0.16, 0.12
+            font_size: '40dp'
+            text: "PH"
+            color: 0.53, 0.72, 0.82, 1
+            bold: True
+            pos_hint: {"x":0.52 ,"y": 0.29}
 
-    Button:
-        id: calibration
-        text: "Calibrate"
-        size_hint: 0.17, 0.07
-        pos_hint: {"x":0.82 ,"y": 0}
-        bold: True
-        color: 1, 1, 1, 1
-        text_size: self.width, None
-        halign: 'center'    
-        canvas.before:
-            Color:
-                rgba: 0.26, 0.50, 0.55, 0.8
-            Rectangle:
-                pos: self.pos
-                size: self.size
-        on_press: root.calibrate()
 
-    Button:
-        id: sync
-        text: "Sync"
-        size_hint: 0.17, 0.07
-        pos_hint: {"x":0 ,"y": 0}
-        bold: True
-        color: 1, 1, 1, 1
-        text_size: self.width, None
-        halign: 'center'    
-        canvas.before:
-            Color:
-                rgba: 0.26, 0.50, 0.55, 0.8
-            Rectangle:
-                pos: self.pos
-                size: self.size
-        on_press: root.sync()
+        Label:
+            id: ph_val
+            size_hint: 0.14, 0.07
+            font_size: '28dp'
+            bold: True
+            text: "0.00 [size=15]mg/l[/size]"
+            color: 1, 1, 1, 1
+            pos_hint: {"x":0.54 ,"y": 0.235}
+            text_size: self.width, None
+            halign: 'center'
+            markup: True
+            canvas.before:
+                Color:
+                    rgba: 0.26, 0.50, 0.55, 0.8
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
 
-    Label:
-        id: timestamp
-        size_hint: 0.2, 0.1
-        # text: "time \ndate"
-        pos_hint: {"x": 0,"y": 0.9}
-        text_size: self.width, None
-        halign: 'center'
-        
+        Label:
+            size_hint: 0.16, 0.12
+            font_size: '40dp'
+            text: "FLOW"
+            color: 0.53, 0.72, 0.82, 1
+            bold: True
+            pos_hint: {"x":0.71 ,"y": 0.41}
+
+
+        Label:
+            id: flow_val
+            size_hint: 0.14, 0.07
+            font_size: '28dp'
+            bold: True
+            text: "0.00 [size=15]mg/l[/size]"
+            color: 1, 1, 1, 1
+            pos_hint: {"x":0.72 ,"y": 0.355}
+            text_size: self.width, None
+            halign: 'center'
+            markup: True
+            canvas.before:
+                Color:
+                    rgba: 0.26, 0.50, 0.55, 0.8
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            id: calibration
+            text: "Calibrate"
+            size_hint: 0.17, 0.07
+            pos_hint: {"x":0.82 ,"y": 0}
+            bold: True
+            color: 1, 1, 1, 1
+            text_size: self.width, None
+            halign: 'center'
+            canvas.before:
+                Color:
+                    rgba: 0.26, 0.50, 0.55, 0.8
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            on_press: root.calibrate()
+
+        Button:
+            id: sync
+            text: "Sync"
+            size_hint: 0.17, 0.07
+            pos_hint: {"x":0 ,"y": 0}
+            bold: True
+            color: 1, 1, 1, 1
+            text_size: self.width, None
+            halign: 'center'
+            canvas.before:
+                Color:
+                    rgba: 0.26, 0.50, 0.55, 0.8
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            on_press: root.sync()
+
+        Label:
+            id: timestamp
+            size_hint: 0.2, 0.1
+            # text: "time \ndate"
+            pos_hint: {"x": 0,"y": 0.9}
+            text_size: self.width, None
+            halign: 'center'
