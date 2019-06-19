@@ -159,22 +159,6 @@
                     pos: self.pos
                     size: self.size
 
-        Button:
-            id: calibration
-            text: "Calibrate"
-            size_hint: 0.17, 0.07
-            pos_hint: {"x":0.82 ,"y": 0}
-            bold: True
-            color: 1, 1, 1, 1
-            text_size: self.width, None
-            halign: 'center'
-            canvas.before:
-                Color:
-                    rgba: 0.26, 0.50, 0.55, 0.8
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
-            on_press: root.calibrate()
 
         Button:
             id: sync
@@ -200,3 +184,229 @@
             pos_hint: {"x": 0,"y": 0.9}
             text_size: self.width, None
             halign: 'center'
+
+        Button:
+            id: settings
+            text: "Settings"
+            size_hint: 0.17, 0.07
+            pos_hint: {"x":0.43 ,"y": 0}
+            on_press:
+                root.manager.current = 'keypad'
+
+
+<KeypadScreen>:
+    password: password
+    FloatLayout:
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'back.jpg'
+        TextInput:
+            id: password
+            password: True
+            size_hint: 0.40, 0.07
+            pos_hint: {"x":0.25 ,"y": 0.73}
+
+        Button:
+            id: one
+            size_hint: 0.1, 0.1
+            font_size: '40dp'
+            text: "1"
+            color: 0.53, 0.72, 0.82, 1
+            bold: True
+            pos_hint: {"x":0.25 ,"y": 0.6}
+            on_press: root.on_key_press(self.text)
+
+        Button:
+            id: two
+            size_hint: 0.1, 0.1
+            font_size: '40dp'
+            text: "2"
+            color: 0.53, 0.72, 0.82, 1
+            bold: True
+            pos_hint: {"x":0.40 ,"y": 0.6}
+            on_press: root.on_key_press(self.text)
+
+        Button:
+            id: three
+            size_hint: 0.1, 0.1
+            font_size: '40dp'
+            text: "3"
+            color: 0.53, 0.72, 0.82, 1
+            bold: True
+            pos_hint: {"x":0.55 ,"y": 0.6}
+            on_press: root.on_key_press(self.text)
+
+        Button:
+            id: four
+            size_hint: 0.1, 0.1
+            font_size: '40dp'
+            text: "4"
+            color: 0.53, 0.72, 0.82, 1
+            bold: True
+            pos_hint: {"x":0.25 ,"y": 0.45}
+            on_press: root.on_key_press(self.text)
+
+        Button:
+            id: five
+            size_hint: 0.1, 0.1
+            font_size: '40dp'
+            text: "5"
+            color: 0.53, 0.72, 0.82, 1
+            bold: True
+            pos_hint: {"x":0.40 ,"y": 0.45}
+            on_press: root.on_key_press(self.text)
+
+        Button:
+            id: six
+            size_hint: 0.1, 0.1
+            font_size: '40dp'
+            text: "6"
+            color: 0.53, 0.72, 0.82, 1
+            bold: True
+            pos_hint: {"x":0.55 ,"y": 0.45}
+            on_press: root.on_key_press(self.text)
+
+        Button:
+            id: seven
+            size_hint: 0.1, 0.1
+            font_size: '40dp'
+            text: "7"
+            color: 0.53, 0.72, 0.82, 1
+            bold: True
+            pos_hint: {"x":0.25 ,"y": 0.30}
+            on_press: root.on_key_press(self.text)
+
+        Button:
+            id: eight
+            size_hint: 0.1, 0.1
+            font_size: '40dp'
+            text: "8"
+            color: 0.53, 0.72, 0.82, 1
+            bold: True
+            pos_hint: {"x":0.40 ,"y": 0.30}
+            on_press: root.on_key_press(self.text)
+
+        Button:
+            id: nine
+            size_hint: 0.1, 0.1
+            font_size: '40dp'
+            text: "9"
+            color: 0.53, 0.72, 0.82, 1
+            bold: True
+            pos_hint: {"x":0.55 ,"y": 0.30}
+            on_press: root.on_key_press(self.text)
+
+        Button:
+            id: clear
+            size_hint: 0.13, 0.1
+            font_size: '40dp'
+            text: "Clear"
+            color: 0.53, 0.72, 0.82, 1
+            bold: True
+            pos_hint: {"x":0.25 ,"y": 0.15}
+            on_press: root.on_key_press(self.text)
+
+        Button:
+            id: zero
+            size_hint: 0.1, 0.1
+            font_size: '40dp'
+            text: "0"
+            color: 0.53, 0.72, 0.82, 1
+            bold: True
+            pos_hint: {"x":0.40 ,"y": 0.15}
+            on_press: root.on_key_press(self.text)
+
+        Button:
+            id: enter
+            size_hint: 0.13, 0.1
+            font_size: '40dp'
+            text: "Enter"
+            color: 0.53, 0.72, 0.82, 1
+            bold: True
+            pos_hint: {"x":0.53 ,"y": 0.15}
+            on_press: root.on_key_press(self.text)
+
+
+<SettingsScreen>:
+    data: data
+    FloatLayout:
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'back.jpg'
+
+    Button:
+        id: calibration
+        text: "Calibrate"
+        size_hint: 0.17, 0.07
+        pos_hint: {"x":0.13 ,"y": 0.48}
+        bold: True
+        color: 1, 1, 1, 1
+        text_size: self.width, None
+        halign: 'center'
+        canvas.before:
+            Color:
+                rgba: 0.26, 0.50, 0.55, 0.8
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        on_press: root.calibrate()
+
+    Button:
+        id: parameters
+        text: "Parameters"
+        size_hint: 0.17, 0.07
+        pos_hint: {"x":0.43 ,"y": 0.48}
+        bold: True
+        color: 1, 1, 1, 1
+        text_size: self.width, None
+        halign: 'center'
+        canvas.before:
+            Color:
+                rgba: 0.26, 0.50, 0.55, 0.8
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        # on_press:
+
+    Button:
+        id: data
+        text: "Data"
+        size_hint: 0.17, 0.07
+        pos_hint: {"x":0.73 ,"y": 0.48}
+        bold: True
+        color: 1, 1, 1, 1
+        text_size: self.width, None
+        halign: 'center'
+        canvas.before:
+            Color:
+                rgba: 0.26, 0.50, 0.55, 0.8
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        on_press:
+            root.manager.current = "data"
+
+
+<DataScreen>:
+    #
+
+    ScrollView:
+        # do_scroll_x: False
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'back.jpg'
+
+        do_scroll_x: False
+        do_scroll_y: True
+        # GridLayout:
+        #     size_hint_y: None
+        #     col
+            # height: self.texture_size[1]
+            # text_size: self.width
+            # padding: 10, 10

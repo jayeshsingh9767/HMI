@@ -4,11 +4,71 @@ from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.properties import ObjectProperty
 import time
+from kivy.uix.popup import Popup
 from kivy.clock import Clock
 import db
 from kivy.uix.videoplayer import VideoPlayer
 from asci import serial_connection
 from kivy.uix.screenmanager import ScreenManager, Screen
+
+
+class DataScreen(Screen):
+    pass
+
+class SettingsScreen(Screen):
+    def calibrate(self):
+        try:
+            print("Initializing Calibration")
+            serial_connection()
+            ser.write('#W03%OPRUSS%')
+            response  = ser.readline()
+            print(ser)
+            print(response)
+        except Exception as er:
+            print(er)
+
+class KeypadScreen(Screen):
+    password = ObjectProperty(None)
+    db_passwd = "1234"
+    def on_key_press(self, text):
+        if text == "1":
+            # print("One is Pressed")
+            self.password.text += "1"
+        if text == "2":
+            # print("Two is Pressed")
+            self.password.text += "2"
+        if text == "3":
+            # print("Three is Pressed")
+            self.password.text += "3"
+        if text == "4":
+            # print("Four is Pressed")
+            self.password.text += "4"
+        if text == "5":
+            # print("Five is Pressed")
+            self.password.text += "5"
+        if text == "6":
+            # print("Six is Pressed")
+            self.password.text += "6"
+        if text == "7":
+            # print("Seven is Pressed")
+            self.password.text += "7"
+        if text == "8":
+            # print("Eight is Pressed")
+            self.password.text += "8"
+        if text == "9":
+            # print("Nine is Pressed")
+            self.password.text += "9"
+        if text == "Clear":
+            # print("Clear is Pressed")
+            self.password.text = ""
+        if text == "0":
+            # print("Zero is Pressed")
+            self.password.text += "0"
+        if text == "Enter":
+            print("Value Entered is ", self.password.text)
+            if self.password.text == self.db_passwd:
+                print("PAssword match")
+                self.manager.current = 'settings'
 
 
 class VideoScreen(Screen):
@@ -27,13 +87,7 @@ class MyScreen(Screen):
     ph_val = ObjectProperty(None)
     flow_val = ObjectProperty(None)
     timestamp = ObjectProperty(None)
-    def calibrate(self):
-        print("Initializing Calibration")
-        serial_connection()
-        ser.write('#W03%OPRUSS%')
-        response  = ser.readline()
-        print(ser)
-        print(response)
+
 
     def show_datetime(self, *arg):
         self.timestamp.text = time.asctime()
@@ -72,28 +126,38 @@ class MyScreen(Screen):
             self.ph_val.text = ph
         if flow:
             self.flow_val.text = flow+" [size=15]m3/h[/size]"
+
     def show_datetime(self, *arg):
         self.timestamp.text = time.asctime()
 
+    # def open_settings(self):
+    #     print("Opening Settings")
+    #     popup = Popup(content=KeypadScreen())
+    #     popup.open()
 
 
 
 class Template2App(App):
-
     def build(self):
         sm = ScreenManager()
         obj = MyScreen(name="home")
         vdo = VideoScreen(name="orpuss")
-        sm.add_widget(vdo)
+        keypad = KeypadScreen(name="keypad")
+        settings = SettingsScreen(name="settings")
+        data = DataScreen(name="data")
+        # sm.add_widget(vdo)  # uncomments leter
         sm.add_widget(obj)
+        sm.add_widget(settings)
+        sm.add_widget(keypad)
+        sm.add_widget(data)
         # video = obj.video_player()
         Clock.schedule_interval(obj.temp_render, 1)
         Clock.schedule_interval(obj.show_datetime, 1)
-        Clock.schedule_interval(vdo.run_home, 12)
+        # Clock.schedule_interval(vdo.run_home, 12)     # uncomments leter
         return sm
-    def on_start(self):
-        sm = ScreenManager()
-        sm.add_widget(MyScreen(name="home"))
+    # def on_start(self):
+    #     sm = ScreenManager()
+    #     sm.add_widget(MyScreen(name="home"))
 
 
 
